@@ -1,0 +1,33 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+
+# Large / raw data — download via pipeline or publish as release assets
+data/raw/
+data/cache/
+*.h5ad
+*.h5
+*.loom
+*.parquet
+*.zarr/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node / web
+node_modules/
+dist/
+.vercel/
+coverage/
+
+# OS / editor
+.DS_Store
+.idea/
+*.swp
