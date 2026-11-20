@@ -1,0 +1,53 @@
+{
+  "id": "how-drugs-work",
+  "kind": "lesson",
+  "order": 11,
+  "title": "How drugs work: a key in a lock",
+  "blurb": "Zoom into proteins and watch real drugs sitting in their pockets.",
+  "minutes": 6,
+  "sources": ["pdb", "druker2001", "alberts"],
+  "steps": [
+    {
+      "title": "Proteins are machines",
+      "view": "molecule", "pdb": "1IEP",
+      "text": {
+        "simple": "Proteins are tiny machines with a shape. Many drugs work by plugging a hole in the machine so it can't work. The yellow sticks are a drug called **imatinib**.",
+        "student": "This is the ABL kinase (the working part of BCR-ABL1) with **imatinib** in its ATP pocket. With the pocket plugged, the kinase can't pass on growth signals. [@druker2001]",
+        "deep": "Imatinib binds the inactive 'DFG-out' conformation of the ABL kinase domain, occupying the ATP site and an adjacent hydrophobic pocket, which underlies its relative selectivity. [@pdb]"
+      }
+    },
+    {
+      "title": "Shape is everything",
+      "view": "molecule", "pdb": "5L2I",
+      "text": {
+        "simple": "A drug has to fit its pocket really well, like a key in a lock. This is palbociclib inside CDK6, a protein that pushes cells to divide.",
+        "student": "Drug designers use 3D structures like this one to tweak a molecule until it fits tightly (**potency**) and fits *only* this lock (**selectivity**).",
+        "deep": "Structure-based design optimizes complementary shape, hydrogen bonds and hydrophobic contacts; selectivity across ~500 human kinases is a central challenge for ATP-site inhibitors."
+      }
+    },
+    {
+      "title": "Freeing a brake",
+      "view": "molecule", "pdb": "4HG7",
+      "text": {
+        "simple": "Some drugs block a protein that's holding a brake down. Nutlin-3a fills the groove MDM2 uses to grab p53, so p53 is set free.",
+        "student": "MDM2 normally binds and destroys p53. Nutlin-3a occupies the p53-binding groove (shown), releasing p53, but only helps if the cell's p53 is still working. [@vassilev2004]",
+        "deep": "Nutlins mimic three key p53 residues (Phe19, Trp23, Leu26) that insert into MDM2's hydrophobic cleft; efficacy requires wild-type TP53. [@vassilev2004]"
+      }
+    },
+    {
+      "title": "Try it: imatinib in our cells",
+      "view": "network", "highlight": ["BCR"],
+      "try": {"actions": ["d:imatinib"], "note": "Imatinib is approximated as switching off BCR-ABL1 (◐ predicted). Read the drug card's caveat."},
+      "text": {
+        "simple": "Let's give imatinib to our cancer cell and our healthy-like cell.",
+        "student": "Compare both cells. Which one has the drug's real target?",
+        "deep": "Note that the RPE1 response reflects normal BCR loss only, not imatinib's real off-target kinase effects."
+      }
+    }
+  ],
+  "quiz": [
+    {"q": "What do the yellow sticks in the 3D views show?", "options": ["DNA", "A drug or small molecule", "Water", "A cell membrane"], "answer": 1, "explain": "Ribbons are protein; yellow sticks are the drug or small molecules bound to it."},
+    {"q": {"simple": "What does it mean for a drug to be 'selective'?", "student": "What does 'selectivity' mean in drug design?"}, "options": ["It's very cheap", "It acts on its target and not on many other proteins", "It works in every disease", "It's taken as a pill"], "answer": 1, "explain": "Selective drugs fit one 'lock' well and others poorly, which helps reduce side effects."},
+    {"q": "Why would nutlin-3a do little in K562 cells?", "options": ["K562's p53 is broken", "K562 has no MDM2", "Nutlin only works in eyes", "K562 cells are too big"], "answer": 0, "explain": "Freeing p53 only helps if p53 works; K562's TP53 is inactivated. [@law1993]"}
+  ]
+}

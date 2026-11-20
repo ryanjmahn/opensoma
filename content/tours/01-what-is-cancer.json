@@ -1,0 +1,79 @@
+{
+  "id": "what-is-cancer",
+  "kind": "tour",
+  "order": 1,
+  "title": "What is cancer?",
+  "blurb": "Cells that stop listening to 'stop' signals.",
+  "minutes": 5,
+  "sources": ["nci_what", "hanahan2011", "alberts"],
+  "steps": [
+    {
+      "title": "You are made of cells",
+      "view": "cell", "cell": "healthy",
+      "text": {
+        "simple": "Your body is built from about 30 trillion tiny living units called **cells**. Each one is like a busy little city, with walls, a control center, and power plants.",
+        "student": "The human body contains roughly 30 trillion cells. Each cell has a **membrane** (its boundary), a **nucleus** holding DNA, and organelles like **mitochondria** that make energy. [@alberts]",
+        "deep": "A typical human cell is a membrane-bounded compartment with a nucleus (genome storage and transcription), an endomembrane system (ER, Golgi) for protein processing, and mitochondria for oxidative phosphorylation and apoptosis control. [@alberts]"
+      }
+    },
+    {
+      "title": "The control center",
+      "view": "cell", "cell": "healthy", "focus": "nucleus",
+      "text": {
+        "simple": "The **nucleus** holds DNA, the cell's instruction book. Each instruction is a **gene**. Genes tell the cell what to build and when to divide.",
+        "student": "DNA in the nucleus contains about 20,000 protein-coding genes. A gene is 'read' (transcribed) into mRNA, which is then translated into a protein. The experiments in this app measure mRNA levels. [@alberts]",
+        "deep": "Gene expression is regulated at transcription, RNA processing, translation and protein stability. Perturb-seq reads out mRNA, so it observes transcriptional consequences of perturbations, not protein activity directly. [@replogle2022]"
+      }
+    },
+    {
+      "title": "Cells follow rules",
+      "view": "network",
+      "highlight": ["growth", "division", "TP53", "RB1"],
+      "text": {
+        "simple": "Healthy cells only divide when they get a **go** signal, and they stop when they get a **stop** signal. Some genes act like a gas pedal, others like brakes.",
+        "student": "Growth signals arrive at the membrane and are relayed inward to switch on division genes. Brake proteins like **p53** and **RB** can halt division if something is wrong. [@hanahan2011]",
+        "deep": "Proliferation is gated by mitogenic signaling (e.g., RTK→RAS→MAPK) converging on the G1/S checkpoint (cyclin D–CDK4/6 phosphorylating RB to release E2F), with p53–p21 providing damage-dependent arrest. [@weinberg]"
+      }
+    },
+    {
+      "title": "When the rules break",
+      "view": "cell", "cell": "cancer", "focus": "nucleus",
+      "text": {
+        "simple": "**Cancer** happens when changes in genes (mutations) make a cell ignore the rules. It keeps dividing when it shouldn't, and its copies pile up into a tumor.",
+        "student": "Cancer is a disease in which some of the body's cells grow uncontrollably and spread. It is caused by changes to genes that control how cells grow and divide. [@nci_what] Usually several mutations are needed. [@vogelstein2013]",
+        "deep": "Tumors arise through accumulation of somatic driver alterations (typically a handful per tumor) in oncogenes and tumor suppressors, plus selection, epigenetic changes and interactions with the microenvironment. [@vogelstein2013] [@hanahan2022]"
+      }
+    },
+    {
+      "title": "Meet the two cells in this app",
+      "view": "cell", "cell": "cancer",
+      "text": {
+        "simple": "In this app you'll poke two kinds of cells grown in labs: a **cancer cell** (from a type of blood cancer) and a **healthy-like cell** (from the eye). Comparing them shows what's special about cancer.",
+        "student": "**K562** cells come from a patient with chronic myeloid leukemia and carry the BCR-ABL1 fusion gene. [@lozzio1975] **RPE1** cells are non-cancer retina cells kept alive with the enzyme telomerase. [@bodnar1998] Both have been grown in labs for decades.",
+        "deep": "K562 is BCR-ABL1+, TP53-null [@law1993] and near-triploid; RPE1 is hTERT-immortalized, near-diploid and TP53 wild-type. They differ in lineage as well as transformation status, so not every difference reflects 'cancer'. [@cellosaurus_k562] [@cellosaurus_rpe1]"
+      }
+    },
+    {
+      "title": "Try it: pull a brake",
+      "view": "network", "highlight": ["TP53"],
+      "try": {
+        "actions": ["g:TP53"],
+        "note": {
+          "simple": "We turned off the p53 brake in the cancer cell. Notice that not much changes. K562's p53 was already broken!",
+          "student": "In K562, TP53 knockdown is measured and shows little effect, as expected because K562's TP53 gene is already inactivated. [@law1993] RPE1's result is only predicted (TP53 wasn't in its screen), so treat it with suspicion.",
+          "deep": "The K562 TP53 knockdown phenotype is not significant by energy test, consistent with TP53 loss. RPE1 is predicted by transfer from K562, so it inherits K562's null phenotype and very likely misses RPE1's real p53 biology: a nice example of a model failure."
+        }
+      },
+      "text": {
+        "simple": "Let's see what happens when we switch off a gene. Look at the results below. ● means a real experiment; ◐ means a computer guess.",
+        "student": "Each result is labeled ● **Measured** (a real experiment) or ◐ **Predicted** (our model's guess, with a confidence level).",
+        "deep": "Measured values are pseudobulk z-scores from CRISPRi Perturb-seq; predictions use a cross-line transfer baseline with calibrated confidence (see How this works)."
+      }
+    }
+  ],
+  "quiz": [
+    {"q": {"simple": "What is cancer?", "student": "Which best describes cancer?"}, "options": ["An infection by germs", "Cells that grow out of control because of gene changes", "A shortage of vitamins", "Cells that stop dividing"], "answer": 1, "explain": "Cancer is caused by changes to genes that control how cells grow and divide. [@nci_what]"},
+    {"q": "Where is DNA kept in the cell?", "options": ["Mitochondria", "Cell membrane", "Nucleus", "Golgi"], "answer": 2, "explain": "The nucleus holds the cell's DNA. [@alberts]"},
+    {"q": {"simple": "Why did turning off p53 barely change the K562 cancer cell?", "student": "Why did TP53 knockdown have little effect in K562?"}, "options": ["p53 isn't a real gene", "K562's p53 was already broken", "The experiment failed", "p53 only works in the eye"], "answer": 1, "explain": "K562 has an inactivating TP53 mutation, so removing it changes little. [@law1993]"}
+  ]
+}

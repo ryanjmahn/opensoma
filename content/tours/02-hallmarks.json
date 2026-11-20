@@ -1,0 +1,75 @@
+{
+  "id": "hallmarks",
+  "kind": "tour",
+  "order": 2,
+  "title": "The hallmarks of cancer",
+  "blurb": "The shared abilities cancer cells pick up, shown inside the cell.",
+  "minutes": 7,
+  "sources": ["hanahan2000", "hanahan2011", "hanahan2022"],
+  "steps": [
+    {
+      "title": "A cancer 'checklist'",
+      "view": "cell", "cell": "cancer",
+      "text": {
+        "simple": "Scientists noticed that almost all cancers gain the same set of 'superpowers'. They called them the **hallmarks of cancer**.",
+        "student": "In 2000, Douglas Hanahan and Robert Weinberg proposed that cancers share a small set of acquired capabilities, the **hallmarks**. The list was expanded in 2011 and 2022. [@hanahan2000] [@hanahan2011] [@hanahan2022]",
+        "deep": "The hallmarks framework organizes tumor biology into acquired capabilities (sustained proliferative signaling, evading growth suppressors, resisting cell death, replicative immortality, angiogenesis, invasion/metastasis, deregulated metabolism, immune evasion) plus enabling characteristics such as genome instability and tumor-promoting inflammation. [@hanahan2011] [@hanahan2022]"
+      }
+    },
+    {
+      "title": "1. Stuck 'go' signal",
+      "view": "network", "highlight": ["EGFR", "KRAS", "BCR"],
+      "text": {
+        "simple": "Cancer cells give themselves their own 'go' signal, like a gas pedal glued down.",
+        "student": "**Sustained proliferative signaling:** mutations in genes like **KRAS** or fusions like **BCR-ABL1** (in K562) keep growth signals switched on with no outside input. [@hanahan2011]",
+        "deep": "Constitutive activation of RTK/RAS/MAPK and PI3K/AKT signaling, via activating mutations, amplifications or fusions, decouples proliferation from mitogen availability. [@hanahan2011]"
+      }
+    },
+    {
+      "title": "2. Ignoring the brakes",
+      "view": "network", "highlight": ["TP53", "RB1", "CDKN1A"],
+      "text": {
+        "simple": "Cells have brakes that say 'stop dividing!' Cancer cells break them.",
+        "student": "**Evading growth suppressors:** tumor suppressors like **RB** and **p53** normally stop division. Cancers often lose them. K562 has lost p53. [@hanahan2011] [@law1993]",
+        "deep": "Loss of RB pathway control (RB1, CDKN2A) and p53 function removes checkpoints at G1/S and after DNA damage. [@hanahan2011]"
+      }
+    },
+    {
+      "title": "3. Refusing to die",
+      "view": "cell", "cell": "cancer", "focus": "mito",
+      "try": {"actions": ["g:MCL1"], "note": "MCL1 is an anti-death protein on mitochondria. Here are the measured effects of knocking it down."},
+      "text": {
+        "simple": "Damaged cells normally destroy themselves to protect the body. Cancer cells switch off this self-destruct button.",
+        "student": "**Resisting cell death:** proteins like **MCL1** and **BCL-XL** guard the mitochondria against apoptosis (programmed cell death). Cancers often make extra of them. [@hanahan2011]",
+        "deep": "Upregulation of anti-apoptotic BCL-2 family members (BCL-2, BCL-XL, MCL1) prevents BAX/BAK-mediated mitochondrial outer membrane permeabilization and cytochrome c release. [@hanahan2011]"
+      }
+    },
+    {
+      "title": "4. Endless dividing",
+      "view": "cell", "cell": "cancer", "focus": "nucleus",
+      "text": {
+        "simple": "Normal cells can only divide a limited number of times, like a countdown. Cancer cells reset the countdown.",
+        "student": "**Replicative immortality:** chromosome tips (telomeres) shorten with each division. Cancer cells switch on the enzyme **telomerase** to rebuild them. (RPE1 cells were given telomerase on purpose so they'd keep growing in the lab.) [@hanahan2011] [@bodnar1998]",
+        "deep": "Telomere maintenance by TERT reactivation (or ALT) bypasses replicative senescence and crisis. Note that RPE1's hTERT immortalization means it shares this one hallmark with cancer cells. [@bodnar1998]"
+      }
+    },
+    {
+      "title": "5. Feeding themselves",
+      "view": "cell", "cell": "cancer", "focus": "mito",
+      "text": {
+        "simple": "Cancer cells change how they eat and make energy, so they can build new cells fast.",
+        "student": "**Deregulated metabolism:** many cancer cells burn sugar in an unusual way (the 'Warburg effect') to get building blocks for new cells. [@vanderheiden2009]",
+        "deep": "Aerobic glycolysis and rewired anabolic metabolism support biomass production for proliferation; mitochondria remain important for biosynthesis and redox balance. [@vanderheiden2009]"
+      }
+    },
+    {
+      "title": "6. More hallmarks",
+      "view": "cell", "cell": "cancer",
+      "text": {
+        "simple": "Cancers also grow their own blood supply, spread to other places, and hide from the immune system. Those happen between cells, so our single-cell view can't show them.",
+        "student": "Other hallmarks include **inducing blood vessel growth**, **invading and spreading** (metastasis), and **evading the immune system**. These involve the tissue around the tumor, which a single cell in a dish can't show. [@hanahan2011]",
+        "deep": "Angiogenesis, invasion/metastasis and immune evasion depend on the tumor microenvironment and are not captured in monoculture cell-line screens, an important limit of this tool. [@hanahan2022]"
+      }
+    }
+  ]
+}

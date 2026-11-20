@@ -1,0 +1,21 @@
+{
+  "id": "find-the-target",
+  "order": 1,
+  "title": "Find the target",
+  "blurb": "This cancer cell's division program is in overdrive. Pick ONE protein to block.",
+  "brief": {
+    "simple": "The K562 cancer cell keeps dividing. You get **one move**: switch off one gene or add one drug. Try to pull the **cell division** bar down to the black goal mark. Explore first! The Explore and Playground pages are open to you.",
+    "student": "Choose **one** knockdown or drug that lowers K562's **cell-division program** to the goal. Tip: test candidates in the Playground first, just as scientists test targets before committing to a drug program.",
+    "deep": "Single-perturbation target selection on the mitotic program score (scaled). Measured knockdowns dominate; drug approximations are lower confidence."
+  },
+  "goal": {"cell": "k562", "pathways": {"division": -0.6}},
+  "maxMoves": 1,
+  "passScore": 35,
+  "hints": ["Growth master switches that feed division are good places to look.", "Try MTOR, RPTOR or SIRT7, or the drug everolimus.", "A gentler, more specific choice: CDK6 (the target of palbociclib)."],
+  "debrief": {
+    "simple": "Real scientists do this with experiments like the ones in this app: switch off thousands of genes, one at a time, and see which ones the cancer needs. But a good target also has to be **safe**. Many genes that slow cancer cells also slow healthy cells. Try the **Do no harm** mission next!",
+    "student": "Genome-scale CRISPR screens like Replogle et al.'s are used to find genes a cancer depends on. [@replogle2022] The strongest hits here (MTOR, RPTOR, SIRT7) are 'core essential': they matter to almost every cell. That makes them poor drug targets unless the cancer depends on them more than normal tissue does.",
+    "deep": "Strong transcriptional phenotypes often reflect pan-essential genes (ribosome biogenesis, mTORC1). Prioritization requires a differential dependency between tumor and normal cells, plus druggability, which is the motivation for comparing K562 to RPE1. [@replogle2022] [@hughes2011]"
+  },
+  "sources": ["replogle2022", "hughes2011"]
+}

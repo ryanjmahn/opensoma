@@ -1,0 +1,53 @@
+{
+  "id": "resistance",
+  "kind": "lesson",
+  "order": 13,
+  "title": "Resistance: when cancer fights back",
+  "blurb": "How cancer cells reroute around a blocked protein, and why combinations help.",
+  "minutes": 6,
+  "sources": ["holohan2013", "gorre2001", "lito2013", "flaherty2012"],
+  "steps": [
+    {
+      "title": "The drug worked... then it didn't",
+      "view": "network", "highlight": ["BCR"],
+      "text": {
+        "simple": "Sometimes a drug shrinks a cancer, but months later it grows back. The cancer has become **resistant**.",
+        "student": "**Drug resistance** is a major reason cancer treatments stop working. A few cells that survive the drug can multiply and take over. [@holohan2013]",
+        "deep": "Resistance can be primary or acquired, arising through selection of pre-existing clones or adaptive (non-genetic) changes. [@holohan2013]"
+      }
+    },
+    {
+      "title": "Trick 1: change the lock",
+      "view": "molecule", "pdb": "1IEP",
+      "text": {
+        "simple": "The cancer can mutate its target protein so the drug's key no longer fits.",
+        "student": "In some leukemia patients on imatinib, BCR-ABL1 picks up mutations in the drug pocket that stop imatinib from binding. [@gorre2001]",
+        "deep": "Kinase-domain mutations (e.g., the T315I 'gatekeeper') or BCR-ABL1 amplification confer imatinib resistance, motivating second- and third-generation inhibitors. [@gorre2001]"
+      }
+    },
+    {
+      "title": "Trick 2: take a detour",
+      "view": "network", "highlight": ["BRAF", "MAP2K1", "PIK3CA", "AKT1"],
+      "text": {
+        "simple": "Signals in a cell travel along roads. If a drug blocks one road, the cancer can find a detour and keep the 'grow' signal going.",
+        "student": "Blocking one protein in a pathway can release feedback brakes, so the signal comes back, or another pathway takes over (**bypass signaling**). [@lito2013]",
+        "deep": "Relief of ERK-dependent negative feedback reactivates RTK/RAS signaling after BRAF inhibition; parallel PI3K/AKT activation provides bypass routes. [@lito2013]"
+      }
+    },
+    {
+      "title": "Block two roads at once",
+      "view": "network", "highlight": ["BRAF", "MAP2K1"],
+      "try": {"actions": ["d:trametinib", "g:MTOR"], "note": "A two-hit combo (◐ predicted by adding effects). Real combinations can be stronger or weaker than the sum."},
+      "text": {
+        "simple": "If you block two roads at the same time, it's much harder for the cancer to find a detour. That's why doctors often combine drugs.",
+        "student": "Combination therapy hits several points at once. For example, BRAF + MEK inhibitors together worked better than BRAF alone in melanoma. [@flaherty2012]",
+        "deep": "Vertical (same pathway) and horizontal (parallel pathway) combinations reduce escape routes; dabrafenib + trametinib improved progression-free survival over monotherapy. [@flaherty2012]"
+      }
+    }
+  ],
+  "quiz": [
+    {"q": "What does it mean when a cancer becomes 'resistant'?", "options": ["It stops growing forever", "The drug no longer works against it", "It becomes a healthy cell", "It spreads to the brain"], "answer": 1, "explain": "Resistance means the treatment stops working. [@holohan2013]"},
+    {"q": "Which is a way cancer cells resist targeted drugs?", "options": ["Mutating the drug's target so it no longer fits", "Turning into bacteria", "Absorbing all the water", "Stopping all gene activity"], "answer": 0, "explain": "Target mutations like those in BCR-ABL1 can block drug binding. [@gorre2001]"},
+    {"q": "Why do combination therapies help?", "options": ["They taste better", "They block several escape routes at once", "They are always cheaper", "They have no side effects"], "answer": 1, "explain": "Hitting multiple points makes detours harder. [@flaherty2012]"}
+  ]
+}

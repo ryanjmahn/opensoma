@@ -1,0 +1,55 @@
+{
+  "id": "every-cancer-different",
+  "kind": "tour",
+  "order": 6,
+  "title": "Why every cancer is different",
+  "blurb": "Different mutations and different cell types mean different weak spots.",
+  "minutes": 5,
+  "sources": ["vogelstein2013", "pcawg2020"],
+  "steps": [
+    {
+      "title": "No two tumors alike",
+      "view": "cell", "cell": "cancer",
+      "text": {
+        "simple": "Two people can both have 'lung cancer', but the broken genes inside their tumors can be completely different.",
+        "student": "Sequencing thousands of tumors shows each has its own mix of driver mutations, even within the same organ. [@vogelstein2013] [@pcawg2020]",
+        "deep": "Pan-cancer whole-genome analyses find on average 4–5 driver mutations per tumor, with substantial inter- and intra-tumor heterogeneity. [@pcawg2020]"
+      }
+    },
+    {
+      "title": "Where the cell came from matters",
+      "view": "cell", "cell": "healthy",
+      "text": {
+        "simple": "A blood cell and an eye cell use different genes every day. So the same broken gene can have different effects in each.",
+        "student": "Cell type ('lineage') shapes which genes are active and which ones a cell depends on.",
+        "deep": "Lineage determines chromatin state, expressed genes and dependencies; driver effects are strongly context-dependent. [@vogelstein2013]"
+      }
+    },
+    {
+      "title": "Try it: same knockdown, two cells",
+      "view": "network", "highlight": ["CDK4"],
+      "try": {
+        "actions": ["g:CDK6"],
+        "note": {
+          "simple": "Turning off CDK6 slows the division program in the blood cancer cell, but barely touches the eye cell. Blood cells lean on CDK6 more.",
+          "student": "● Measured in both: CDK6 knockdown lowers K562's division program, with almost no change in RPE1. The drug palbociclib blocks CDK4 and CDK6.",
+          "deep": "Hematopoietic cells rely more on CDK6 (and cyclin D3, try CCND3), whereas epithelial cells rely more on CDK4/cyclin D1, an example of lineage-specific dependency."
+        }
+      },
+      "text": {
+        "simple": "Let's test one gene in both cells.",
+        "student": "Compare the cell-division bar in both cells.",
+        "deep": "Compare division-program scores."
+      }
+    },
+    {
+      "title": "Why this matters for medicine",
+      "view": "none",
+      "text": {
+        "simple": "Because every cancer is different, doctors now often test a tumor's genes to choose a treatment. But that's for doctors to decide, not this app!",
+        "student": "This is the idea behind **precision oncology**: match treatment to a tumor's specific changes. [@nci_targeted] This app is a learning tool and can't make that match for anyone.",
+        "deep": "Biomarker-driven therapy (e.g., BCR-ABL1 → imatinib, KRAS G12C → sotorasib) depends on validated companion diagnostics and clinical evidence, not cell-line data alone. [@nci_targeted]"
+      }
+    }
+  ]
+}

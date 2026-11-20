@@ -1,0 +1,21 @@
+{
+  "id": "calm-it-down",
+  "order": 2,
+  "title": "Calm it down in 3 moves",
+  "blurb": "Bring growth and division down to the target, without overshooting.",
+  "brief": {
+    "simple": "Use up to **three** moves to bring the K562 cancer cell's **growth** and **division** bars to the black goal marks. Too much is as bad as too little!",
+    "student": "Reach the target state (growth −0.6, division −0.8) in K562 with at most 3 actions. Combinations are ◐ predicted by adding up effects.",
+    "deep": "Minimize Euclidean distance to the target in the (growth, division) program space with ≤3 additive perturbations."
+  },
+  "goal": {"cell": "k562", "pathways": {"growth": -0.6, "division": -0.8}},
+  "maxMoves": 3,
+  "passScore": 60,
+  "hints": ["One strong move might get you most of the way there.", "SIRT7 or MTOR alone come close. Watch for overshooting.", "Combine a medium move (like RPTOR) with a small one (like CDK6)."],
+  "debrief": {
+    "simple": "Real drugs are given at a **dose**: too little does nothing, too much harms the patient. Finding the right amount is a big part of clinical trials.",
+    "student": "Hitting a target state, not just 'as low as possible', mirrors dose finding in phase I trials, where the goal is enough effect with acceptable toxicity.",
+    "deep": "Additive combination is a strong simplification: real combinations show synergy, antagonism and saturation, which are better modeled with dose-response surfaces."
+  },
+  "sources": ["hughes2011"]
+}

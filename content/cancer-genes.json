@@ -1,0 +1,13 @@
+{
+  "_about": "Small hand-picked list of well-known cancer driver genes, from the driver-gene tables in Vogelstein et al. 2013. 'oncogene' = stuck gas pedal when mutated; 'suppressor' = broken brake. Not a complete list.",
+  "_sources": ["vogelstein2013", "weinberg"],
+  "genes": {
+    "KRAS": "oncogene", "NRAS": "oncogene", "HRAS": "oncogene", "BRAF": "oncogene", "PIK3CA": "oncogene",
+    "EGFR": "oncogene", "ERBB2": "oncogene", "MYC": "oncogene", "ABL1": "oncogene", "CCND1": "oncogene",
+    "CDK4": "oncogene", "MDM2": "oncogene", "AKT1": "oncogene", "CTNNB1": "oncogene", "IDH1": "oncogene",
+    "JAK2": "oncogene", "KIT": "oncogene", "FLT3": "oncogene", "SF3B1": "oncogene", "MAP2K1": "oncogene",
+    "TP53": "suppressor", "RB1": "suppressor", "PTEN": "suppressor", "APC": "suppressor", "CDKN2A": "suppressor",
+    "BRCA1": "suppressor", "BRCA2": "suppressor", "SMAD4": "suppressor", "VHL": "suppressor", "NF1": "suppressor",
+    "ATM": "suppressor", "ARID1A": "suppressor", "KMT2D": "suppressor", "STK11": "suppressor", "WT1": "suppressor"
+  }
+}

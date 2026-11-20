@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react'
 import { expect, test } from 'vitest'
 import App from './App'
 
-test('renders the hello cell page with the not-medical-advice note', () => {
+test('shell renders navigation and the not-medical-advice note before data loads', () => {
   render(<App />)
-  expect(screen.getByRole('heading', { name: /hello, cell/i })).toBeInTheDocument()
-  expect(screen.getByText(/not medical advice/i)).toBeInTheDocument()
+  expect(screen.getByRole('navigation', { name: 'Main' })).toBeInTheDocument()
+  expect(screen.getByText(/it is not medical advice/i)).toBeInTheDocument()
 })

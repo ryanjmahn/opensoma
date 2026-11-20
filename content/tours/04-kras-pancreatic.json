@@ -1,0 +1,65 @@
+{
+  "id": "kras-pancreatic",
+  "kind": "tour",
+  "order": 4,
+  "title": "KRAS and pancreatic cancer",
+  "blurb": "Why KRAS was called 'undruggable' for decades, and what changed.",
+  "minutes": 6,
+  "sources": ["waters2018", "ostrem2013", "skoulidis2021"],
+  "review": "Needs expert check: mutation frequencies and the current state of KRAS G12D drug trials change quickly.",
+  "steps": [
+    {
+      "title": "The most wanted gene",
+      "view": "network", "highlight": ["KRAS"],
+      "text": {
+        "simple": "In almost every pancreatic cancer, the KRAS gas pedal is stuck down. If we could switch KRAS off, it might help a lot of people.",
+        "student": "KRAS is mutated in over 90% of pancreatic ductal adenocarcinomas, the most common pancreatic cancer, and it's the main driver of their growth. [@waters2018]",
+        "deep": "KRAS mutations (predominantly G12D and G12V, with G12C rare at ~1–2%) are found in over 90% of PDAC and are required for tumor maintenance in mouse models. [@waters2018]"
+      }
+    },
+    {
+      "title": "Why it was 'undruggable'",
+      "view": "molecule", "pdb": "4OBE",
+      "text": {
+        "simple": "Most drugs work like a key in a lock: they fit into a pocket on a protein. KRAS looked like a smooth ball with no good pocket. For about 30 years, nobody could make a drug stick.",
+        "student": "KRAS's natural partner, GTP, binds extremely tightly, so drugs can't push it out, and the surface lacked deep pockets for a drug to grip. That's why KRAS was long called 'undruggable'. [@ostrem2013]",
+        "deep": "Picomolar GTP/GDP affinity and high cellular GTP concentrations made nucleotide-competitive inhibitors impractical, and the protein lacked obvious allosteric pockets in available structures. [@ostrem2013]"
+      }
+    },
+    {
+      "title": "The breakthrough pocket",
+      "view": "molecule", "pdb": "6OIM",
+      "text": {
+        "simple": "In 2013 scientists found a hidden pocket that only shows up in one broken version of KRAS (called G12C). They designed a drug that clips into it. That drug, **sotorasib**, was approved in 2021.",
+        "student": "Shokat's lab found that the G12C mutation creates a cysteine that a drug can attach to, next to a hidden 'switch-II' pocket. [@ostrem2013] This led to **sotorasib** (yellow sticks), approved in 2021 for KRAS G12C lung cancer. [@skoulidis2021]",
+        "deep": "Covalent inhibitors targeting Cys12 occupy the switch-II pocket of GDP-bound KRAS G12C, trapping it in the inactive state. [@ostrem2013] Sotorasib showed a 37% objective response rate in a phase 2 trial in previously treated NSCLC. [@skoulidis2021]"
+      }
+    },
+    {
+      "title": "But pancreatic cancer is mostly not G12C",
+      "view": "network", "highlight": ["KRAS"],
+      "text": {
+        "simple": "Sadly, most pancreatic cancers have a *different* broken KRAS, so sotorasib doesn't fit. Scientists are now working on drugs for those versions too.",
+        "student": "Only a small fraction of pancreatic cancers carry G12C; most carry G12D or G12V. Drugs aimed at these other forms are being studied in clinical trials. [@waters2018]",
+        "deep": "Efforts now include non-covalent G12D-selective inhibitors and broader RAS(ON) inhibitors; their clinical value is still being established."
+      }
+    },
+    {
+      "title": "Try it: our cells aren't pancreatic",
+      "view": "network", "highlight": ["KRAS"],
+      "try": {
+        "actions": ["d:sotorasib"],
+        "note": {
+          "simple": "Honesty check: neither of our cells has the G12C KRAS that sotorasib needs. We show what removing KRAS does, as a guess. The real drug would do very little here.",
+          "student": "Sotorasib is modeled as a KRAS knockdown (◐ predicted). Neither K562 nor RPE1 carries G12C, so the real drug wouldn't bind. This is a limit of our cell choice: the open dataset we use doesn't include a pancreatic cancer line.",
+          "deep": "A pancreatic (KRAS G12D) Perturb-seq line would be needed to model this properly; candidate data sources for v2 include drug-perturbation atlases across many cancer lines."
+        }
+      },
+      "text": {
+        "simple": "Let's try sotorasib on our cells.",
+        "student": "Apply sotorasib and read the label carefully.",
+        "deep": "Note the prediction label and caveat."
+      }
+    }
+  ]
+}

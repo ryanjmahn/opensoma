@@ -1,0 +1,55 @@
+{
+  "id": "drug-pipeline",
+  "kind": "lesson",
+  "order": 10,
+  "title": "The drug discovery pipeline",
+  "blurb": "From target to approval: the long, expensive road a new medicine travels.",
+  "minutes": 8,
+  "sources": ["hughes2011", "wong2019", "dimasi2016", "wouters2020"],
+  "review": "Stage timings are rough typical ranges; worth a check by someone in pharma R&D.",
+  "steps": [
+    {
+      "title": "A long journey",
+      "view": "pipeline",
+      "text": {
+        "simple": "Making a new medicine takes more than ten years and costs a fortune. Click through each stage on the left to see what happens.",
+        "student": "Drug discovery runs through roughly eight stages, from picking a target to regulatory approval. Click each stage to explore it. [@hughes2011]",
+        "deep": "The canonical pipeline: target ID/validation → hit discovery → hit-to-lead/lead optimization → preclinical development → phase I–III → regulatory review. [@hughes2011]"
+      }
+    },
+    {
+      "title": "Where this app fits",
+      "view": "network", "highlight": ["BCR", "CDK4", "MTOR"],
+      "try": {"actions": ["g:CDK6"], "note": "A knockdown experiment like this one is a classic way to ask 'is this protein a good target?'"},
+      "text": {
+        "simple": "The playground is like the very first stage: you switch off a gene and see if the cancer cell cares. If it does, that gene's protein might be a good **target**.",
+        "student": "Perturb-seq and other CRISPR screens are tools for **target identification and validation**: they reveal which genes a cancer cell depends on, and what happens when you remove them.",
+        "deep": "Genetic perturbation phenocopies an ideal, perfectly selective inhibitor, which is useful for validation but optimistic: real compounds have off-targets, incomplete inhibition and pharmacokinetic limits."
+      }
+    },
+    {
+      "title": "Most drugs fail",
+      "view": "pipeline",
+      "text": {
+        "simple": "Here's the hard part: most drugs that look great on cells in a dish **don't work** or aren't safe in people. For cancer drugs, only about 3 in 100 that start human trials get approved.",
+        "student": "A large study of trials from 2000–2015 found about **3.4%** of cancer drugs entering phase I were eventually approved, versus about 13.8% across all diseases. [@wong2019]",
+        "deep": "Wong, Siah & Lo estimated a probability of success from phase I to approval of 3.4% for oncology versus 13.8% overall (2000–2015), with higher success for biomarker-selected trials. [@wong2019]"
+      }
+    },
+    {
+      "title": "Why so expensive?",
+      "view": "pipeline",
+      "text": {
+        "simple": "Because so many drugs fail, the few that succeed have to pay for all the failures. Estimates range from about one to two-and-a-half billion dollars per new drug.",
+        "student": "Estimates of the cost per approved drug, including failures and the cost of capital, range from about **$1 billion** to **$2.6 billion**. [@wouters2020] [@dimasi2016]",
+        "deep": "DiMasi et al. estimated $2.6B (2013 USD, capitalized, self-originated compounds from large firms) [@dimasi2016]; Wouters et al. estimated a median of $985M using public SEC filings. [@wouters2020] Methods and samples drive the difference."
+      }
+    }
+  ],
+  "quiz": [
+    {"q": "What is a drug 'target'?", "options": ["The disease the drug treats", "The protein the drug is designed to act on", "The patient taking the drug", "The dose of the drug"], "answer": 1, "explain": "A target is usually a protein whose activity drives the disease. [@hughes2011]"},
+    {"q": {"simple": "About how many cancer drugs that start human trials get approved?", "student": "Roughly what fraction of oncology drugs entering phase I reach approval (2000–2015)?"}, "options": ["About 3 in 100", "About 30 in 100", "About 60 in 100", "Almost all"], "answer": 0, "explain": "About 3.4% for oncology. [@wong2019]"},
+    {"q": "Which stage tests a drug in a small group of people mainly for safety and dose?", "options": ["Hit discovery", "Phase I", "Phase III", "Lead optimization"], "answer": 1, "explain": "Phase I trials focus on safety and finding the dose."},
+    {"q": "Why do drugs that work on cells in a dish often fail in people?", "options": ["Dishes are too small", "A body has many cell types, organs that process drugs, and an immune system that a dish lacks", "People don't have genes", "Cells in dishes are always healthy"], "answer": 1, "explain": "Cell lines miss much of a real body's complexity. [@wong2019]"}
+  ]
+}
