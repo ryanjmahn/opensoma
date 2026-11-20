@@ -1,0 +1,74 @@
+{
+  "id": "how-cancer-cheats",
+  "kind": "tour",
+  "order": 5,
+  "title": "How cancer cells cheat",
+  "blurb": "Dodging death, dividing endlessly, and feeding themselves, in real data.",
+  "minutes": 6,
+  "sources": ["hanahan2011", "druker2001", "vanderheiden2009"],
+  "review": "Needs expert check: the interpretation of BCR knockdown as BCR-ABL1 loss, and the erythroid-gene reading.",
+  "steps": [
+    {
+      "title": "K562's cheat code: BCR-ABL1",
+      "view": "network", "highlight": ["BCR", "GRB2", "STAT5A"],
+      "text": {
+        "simple": "K562 cancer cells have two genes accidentally glued together, **BCR** and **ABL1**. The glued-together protein is always on and keeps shouting 'grow!'",
+        "student": "In chronic myeloid leukemia, a swap between chromosomes 9 and 22 (the 'Philadelphia chromosome') fuses BCR to ABL1. The BCR-ABL1 protein is a kinase that's permanently on. [@lozzio1975] [@druker2001]",
+        "deep": "BCR-ABL1 is a constitutively active tyrosine kinase signaling through GRB2/SOS/RAS, PI3K/AKT and STAT5, promoting proliferation and survival (e.g., via BCL-XL). [@weinberg]"
+      }
+    },
+    {
+      "title": "Try it: turn off the fusion",
+      "view": "network", "highlight": ["BCR"],
+      "try": {
+        "actions": ["g:BCR"],
+        "note": {
+          "simple": "In K562, the top changed genes are linked to making red blood cells. Without its cheat code, the leukemia cell starts acting more like a normal blood cell. In the healthy-like cell, very different genes change.",
+          "student": "● Measured in both. In K562, BCR knockdown (which also silences the fusion) raises genes such as **SLC25A37** and **BLVRB**, linked to red-blood-cell maturation. In RPE1 it mostly changes cytoskeleton genes. Same action, very different meaning.",
+          "deep": "The K562 signature is consistent with erythroid differentiation reported after BCR-ABL1 inhibition in K562 (an interpretation worth expert review). Pathway-level scores are modest; the signal is concentrated in specific genes."
+        }
+      },
+      "text": {
+        "simple": "What happens if we switch off BCR-ABL1?",
+        "student": "Compare the two cells' top genes.",
+        "deep": "Inspect the top genes rather than the pathway bars here."
+      }
+    },
+    {
+      "title": "Cheat 2: endless energy and parts",
+      "view": "cell", "cell": "cancer", "focus": "mito",
+      "try": {
+        "actions": ["g:MTOR"],
+        "note": {
+          "simple": "mTOR is a master growth switch. Turning it off quiets lots of pathways in **both** cells. It's important for every cell, not just cancer.",
+          "student": "● Measured: MTOR knockdown lowers division, energy and DNA-repair programs in both cell lines. A drug hitting mTOR would likely affect healthy cells too.",
+          "deep": "MTOR knockdown produces broad, shared downregulation across programs in both lines, with a paradoxical rise in translation-gene mRNAs (possibly compensatory). mRNA ≠ translation rate."
+        }
+      },
+      "text": {
+        "simple": "Cancer cells need lots of energy and building blocks to keep making copies of themselves.",
+        "student": "Growth switches like **mTOR** coordinate nutrients, energy and protein-making. Cancers often keep them on. [@hanahan2011]",
+        "deep": "mTORC1 integrates growth factor, nutrient and energy signals to drive anabolism. [@vanderheiden2009]"
+      }
+    },
+    {
+      "title": "Cheat 3: dodging self-destruct",
+      "view": "cell", "cell": "cancer", "focus": "mito",
+      "try": {"actions": ["g:BCL2L1", "g:MCL1"], "note": "Two anti-death guards turned off at once. This combination is ◐ predicted by adding up the two measured single effects."},
+      "text": {
+        "simple": "Cancer cells put extra guards on their self-destruct button. What if we remove two guards at once?",
+        "student": "Combining knockdowns of **BCL-XL** and **MCL1** removes two layers of protection against apoptosis. [@hanahan2011]",
+        "deep": "Dual BCL-XL/MCL1 dependence is common; additive transcriptional models can't capture the synthetic-lethal cell death that may result (dead cells aren't sequenced)."
+      }
+    },
+    {
+      "title": "A blind spot",
+      "view": "none",
+      "text": {
+        "simple": "Big secret: if a cell dies, we can't measure it anymore! So this data shows how cells change *before* they die, not who dies.",
+        "student": "Perturb-seq measures gene activity in cells that survive long enough to be sequenced. Strong 'killer' knockdowns may look weaker than they are. [@replogle2022]",
+        "deep": "Survivorship bias: strongly lethal perturbations are sampled with fewer cells and in surviving states; fitness effects are better read from proliferation screens."
+      }
+    }
+  ]
+}

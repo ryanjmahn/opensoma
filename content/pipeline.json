@@ -1,0 +1,104 @@
+{
+ "sources": [
+  "hughes2011",
+  "wong2019",
+  "dimasi2016",
+  "wouters2020"
+ ],
+ "stages": [
+  {
+   "id": "target",
+   "label": "Target",
+   "time": "1–2+ years",
+   "text": {
+    "simple": "Scientists pick a protein that seems to drive the disease. If you can block it, maybe you can stop the disease.",
+    "student": "**Target identification and validation:** find a protein whose activity drives the disease (for example a stuck-on kinase), then prove that blocking it helps, often with knockdown experiments like the ones in this app. [@hughes2011]",
+    "deep": "Targets come from genetics (driver mutations), functional genomics (CRISPR screens, Perturb-seq), and biology. Validation asks whether modulating the target changes disease-relevant phenotypes, and whether a molecule can plausibly bind it ('druggability'). [@hughes2011]"
+   }
+  },
+  {
+   "id": "hit",
+   "label": "Hit",
+   "time": "~1 year",
+   "text": {
+    "simple": "Robots test huge libraries of chemicals to find any that stick to the target.",
+    "student": "**Hit discovery:** high-throughput screening tests hundreds of thousands of compounds against the target. A 'hit' is any compound that has some effect. [@hughes2011]",
+    "deep": "Hit finding uses HTS, fragment screening, DNA-encoded libraries, virtual screening, or structure-based design. Hits are usually weak (micromolar) and need confirmation in orthogonal assays. [@hughes2011]"
+   }
+  },
+  {
+   "id": "lead",
+   "label": "Lead",
+   "time": "1–3 years",
+   "text": {
+    "simple": "Chemists tweak the best chemicals again and again to make them stronger and safer.",
+    "student": "**Lead optimization:** medicinal chemists make many variants of the best hits to improve how tightly they bind, how selective they are, and how well the body absorbs them. [@hughes2011]",
+    "deep": "Lead optimization iterates on potency, selectivity (off-target kinases, hERG), and ADME/PK properties, often guided by co-crystal structures like the ones in this app. [@hughes2011]"
+   }
+  },
+  {
+   "id": "preclinical",
+   "label": "Preclinical",
+   "time": "1–2 years",
+   "text": {
+    "simple": "The drug is tested on cells in dishes and on animals to check that it works and is safe enough to try in people.",
+    "student": "**Preclinical testing:** cell lines (like K562 in this app) and animal models test whether the drug works and what dose is toxic. Lots of drugs that work on cells in a dish fail later in people.",
+    "deep": "Preclinical packages include efficacy in cell lines and xenografts or PDX models, pharmacokinetics, and GLP toxicology to support an Investigational New Drug (IND) application. Cell-line efficacy is a weak predictor of clinical benefit."
+   }
+  },
+  {
+   "id": "phase1",
+   "label": "Phase I",
+   "time": "~1–2 years",
+   "text": {
+    "simple": "A small group of volunteers takes the drug to check it's safe and find the right dose.",
+    "student": "**Phase I:** usually tens of people. In cancer, often patients who have run out of other options. The main question: is it safe, and what dose?",
+    "deep": "Phase I establishes safety, maximum tolerated or recommended phase II dose, and pharmacokinetics. Oncology phase I trials typically enroll patients with advanced disease rather than healthy volunteers."
+   }
+  },
+  {
+   "id": "phase2",
+   "label": "Phase II",
+   "time": "~2 years",
+   "text": {
+    "simple": "A bigger group tries it to see if it actually helps.",
+    "student": "**Phase II:** often around a hundred patients or more. Does the tumor shrink? This is where many drugs fail.",
+    "deep": "Phase II estimates efficacy (response rate, progression-free survival) and refines dosing; it has historically been the largest point of attrition."
+   }
+  },
+  {
+   "id": "phase3",
+   "label": "Phase III",
+   "time": "2–4 years",
+   "text": {
+    "simple": "Hundreds or thousands of people help compare the new drug with the best treatment we already have.",
+    "student": "**Phase III:** large trials that compare the new drug with the current standard treatment, usually by random assignment.",
+    "deep": "Phase III randomized controlled trials test superiority or non-inferiority on clinically meaningful endpoints such as overall survival."
+   }
+  },
+  {
+   "id": "approval",
+   "label": "Approval",
+   "time": "~6–12 months review",
+   "text": {
+    "simple": "Government experts check all the evidence before the drug can be sold.",
+    "student": "**Approval:** a regulator (such as the US FDA) reviews all the data. Even after approval, safety is watched in the real world.",
+    "deep": "Regulatory review (NDA/BLA) may use accelerated pathways for serious diseases with unmet need; post-marketing studies continue to monitor safety and confirm benefit."
+   }
+  }
+ ],
+ "totals": [
+  {
+   "value": "10–15 yrs",
+   "label": "typical time from start to approval [@hughes2011]"
+  },
+  {
+   "value": "~3–14%",
+   "label": "of drugs entering human trials get approved: about 3% for cancer, about 14% across all diseases (2000–2015 data) [@wong2019]"
+  },
+  {
+   "value": "$1–2.6 B",
+   "label": "estimated cost per approved drug, including the failures; estimates vary by method [@wouters2020] [@dimasi2016]"
+  }
+ ]
+}

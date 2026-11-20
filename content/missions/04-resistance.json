@@ -1,0 +1,22 @@
+{
+  "id": "resistance-strikes-back",
+  "order": 4,
+  "title": "Resistance strikes back",
+  "blurb": "Your first drug works, then the cell adapts. Find a combination that still works.",
+  "brief": {
+    "simple": "Your **first** move will work at first, but then the cancer cell finds a detour and most of that effect fades. Use more moves to keep growth and division down.",
+    "student": "After your first action, the K562 cell **adapts**: 70% of that first action's effect disappears. Add more actions so the combination still reaches the goal.",
+    "deep": "Scripted adaptation: the first perturbation's effect in K562 is scaled by 0.3; subsequent perturbations are not adapted. This is an illustration, not a learned model of resistance."
+  },
+  "goal": {"cell": "k562", "pathways": {"growth": -0.5, "division": -0.5}},
+  "maxMoves": 3,
+  "adapt": {"recovery": 0.7, "note": {"simple": "The cell rerouted its signals around your first move. Only 30% of its effect is left.", "student": "The cell adapted to your first action (70% of its effect faded). This is scripted to show the idea of resistance, not predicted by the data.", "deep": "First-action effects in K562 are scaled by 0.3 to illustrate adaptive resistance; this is not data-derived."}},
+  "passScore": 55,
+  "hints": ["Your first move fades, so put a weaker move first and stronger ones after.", "Hit two different points: for example a growth switch (MTOR, RPTOR) and a division gene (CDK6).", "Order matters here: the first move is the one that fades."],
+  "debrief": {
+    "simple": "Cancer cells can adapt to a drug, so doctors often use **combinations** that block more than one route at once. That makes it much harder for the cancer to escape.",
+    "student": "Adaptive resistance through feedback and bypass signaling is well documented, for example after BRAF inhibition in melanoma, where adding a MEK inhibitor improved outcomes. [@lito2013] [@flaherty2012]",
+    "deep": "Real resistance is time-dependent and heterogeneous (selection plus adaptation). Modeling it properly would need time-course perturbation data, a 'time-lapse' world model on the roadmap. [@holohan2013]"
+  },
+  "sources": ["holohan2013", "lito2013", "flaherty2012"]
+}

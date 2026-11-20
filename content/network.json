@@ -1,0 +1,495 @@
+{
+ "title": "Simplified growth, division and cell-death network",
+ "note": "Simplified pathway (illustration). Real cells have hundreds more connections. Colors show mRNA changes, not protein activity.",
+ "size": [
+  1000,
+  830
+ ],
+ "compartments": [
+  {
+   "id": "membrane",
+   "label": "Cell membrane",
+   "x": 20,
+   "y": 20,
+   "w": 960,
+   "h": 70
+  },
+  {
+   "id": "cytoplasm",
+   "label": "Cytoplasm",
+   "x": 20,
+   "y": 90,
+   "w": 960,
+   "h": 470
+  },
+  {
+   "id": "mito",
+   "label": "Mitochondrion",
+   "x": 610,
+   "y": 260,
+   "w": 360,
+   "h": 250
+  },
+  {
+   "id": "nucleus",
+   "label": "Nucleus",
+   "x": 20,
+   "y": 570,
+   "w": 960,
+   "h": 240
+  }
+ ],
+ "nodes": [
+  {
+   "id": "EGFR",
+   "gene": "EGFR",
+   "label": "EGFR",
+   "x": 110,
+   "y": 55,
+   "role": "Receptor: catches growth signals outside the cell"
+  },
+  {
+   "id": "GRB2",
+   "gene": "GRB2",
+   "label": "GRB2",
+   "x": 110,
+   "y": 150,
+   "role": "Adapter that passes the signal on"
+  },
+  {
+   "id": "SOS1",
+   "gene": "SOS1",
+   "label": "SOS1",
+   "x": 110,
+   "y": 240,
+   "role": "Switches KRAS on"
+  },
+  {
+   "id": "KRAS",
+   "gene": "KRAS",
+   "label": "KRAS",
+   "x": 110,
+   "y": 330,
+   "role": "Molecular on/off switch; often stuck 'on' in cancer"
+  },
+  {
+   "id": "BRAF",
+   "gene": "BRAF",
+   "label": "BRAF",
+   "x": 110,
+   "y": 420,
+   "role": "Relay kinase"
+  },
+  {
+   "id": "MAP2K1",
+   "gene": "MAP2K1",
+   "label": "MEK1",
+   "x": 110,
+   "y": 505,
+   "role": "Relay kinase (drug target of trametinib)"
+  },
+  {
+   "id": "MAPK1",
+   "gene": "MAPK1",
+   "label": "ERK2",
+   "x": 110,
+   "y": 630,
+   "role": "Carries the signal into the nucleus"
+  },
+  {
+   "id": "BCR",
+   "gene": "BCR",
+   "label": "BCR-ABL1",
+   "x": 560,
+   "y": 150,
+   "role": "Fusion kinase found in K562 and CML; always on"
+  },
+  {
+   "id": "STAT5A",
+   "gene": "STAT5A",
+   "label": "STAT5",
+   "x": 540,
+   "y": 400,
+   "role": "Signal-driven gene switch"
+  },
+  {
+   "id": "PIK3CA",
+   "gene": "PIK3CA",
+   "label": "PI3K",
+   "x": 260,
+   "y": 420,
+   "role": "Survival and growth signal"
+  },
+  {
+   "id": "AKT1",
+   "gene": "AKT1",
+   "label": "AKT",
+   "x": 260,
+   "y": 505,
+   "role": "Survival kinase"
+  },
+  {
+   "id": "MTOR",
+   "gene": "MTOR",
+   "label": "mTOR",
+   "x": 400,
+   "y": 505,
+   "role": "Master switch for growth"
+  },
+  {
+   "id": "RPS6",
+   "gene": "RPS6",
+   "label": "Ribosome (RPS6)",
+   "x": 400,
+   "y": 400,
+   "role": "Part of the protein-making machine"
+  },
+  {
+   "id": "translation",
+   "process": "translation",
+   "label": "Protein making",
+   "x": 400,
+   "y": 310
+  },
+  {
+   "id": "MYC",
+   "gene": "MYC",
+   "label": "MYC",
+   "x": 110,
+   "y": 750,
+   "role": "Master growth gene switch"
+  },
+  {
+   "id": "CDK4",
+   "gene": "CDK4",
+   "label": "CDK4/6",
+   "x": 240,
+   "y": 750,
+   "role": "Pushes the cell past the division checkpoint"
+  },
+  {
+   "id": "RB1",
+   "gene": "RB1",
+   "label": "RB",
+   "x": 370,
+   "y": 750,
+   "role": "Tumor suppressor brake on division"
+  },
+  {
+   "id": "E2F1",
+   "gene": "E2F1",
+   "label": "E2F1",
+   "x": 500,
+   "y": 750,
+   "role": "Turns on division genes"
+  },
+  {
+   "id": "CDK1",
+   "gene": "CDK1",
+   "label": "CDK1",
+   "x": 630,
+   "y": 750,
+   "role": "Drives the cell into mitosis"
+  },
+  {
+   "id": "division",
+   "process": "division",
+   "label": "Cell division",
+   "x": 880,
+   "y": 760
+  },
+  {
+   "id": "TP53",
+   "gene": "TP53",
+   "label": "p53",
+   "x": 560,
+   "y": 630,
+   "role": "Tumor suppressor 'guardian of the genome'"
+  },
+  {
+   "id": "MDM2",
+   "gene": "MDM2",
+   "label": "MDM2",
+   "x": 700,
+   "y": 630,
+   "role": "Keeps p53 levels low"
+  },
+  {
+   "id": "CDKN1A",
+   "gene": "CDKN1A",
+   "label": "p21",
+   "x": 380,
+   "y": 630,
+   "role": "Brake that p53 turns on"
+  },
+  {
+   "id": "ATR",
+   "gene": "ATR",
+   "label": "ATR",
+   "x": 900,
+   "y": 630,
+   "role": "DNA-damage alarm"
+  },
+  {
+   "id": "CHEK1",
+   "gene": "CHEK1",
+   "label": "CHK1",
+   "x": 790,
+   "y": 700,
+   "role": "Pauses division when DNA is damaged"
+  },
+  {
+   "id": "dna_repair",
+   "process": "dna_repair",
+   "label": "DNA repair",
+   "x": 900,
+   "y": 540
+  },
+  {
+   "id": "MCL1",
+   "gene": "MCL1",
+   "label": "MCL1",
+   "x": 680,
+   "y": 320,
+   "role": "Anti-death protein"
+  },
+  {
+   "id": "BCL2L1",
+   "gene": "BCL2L1",
+   "label": "BCL-XL",
+   "x": 800,
+   "y": 320,
+   "role": "Anti-death protein"
+  },
+  {
+   "id": "BAX",
+   "gene": "BAX",
+   "label": "BAX",
+   "x": 740,
+   "y": 410,
+   "role": "Pokes holes in the mitochondrion to start cell death"
+  },
+  {
+   "id": "CYCS",
+   "gene": "CYCS",
+   "label": "Cytochrome c",
+   "x": 740,
+   "y": 480,
+   "role": "Released from mitochondria to trigger death"
+  },
+  {
+   "id": "CASP3",
+   "gene": "CASP3",
+   "label": "Caspase-3",
+   "x": 900,
+   "y": 380,
+   "role": "Executioner enzyme"
+  },
+  {
+   "id": "death",
+   "process": "death",
+   "label": "Cell death",
+   "x": 900,
+   "y": 190
+  },
+  {
+   "id": "metabolism",
+   "process": "metabolism",
+   "label": "Energy (respiration)",
+   "x": 895,
+   "y": 470
+  },
+  {
+   "id": "growth",
+   "process": "growth",
+   "label": "Growth signaling",
+   "x": 260,
+   "y": 240
+  },
+  {
+   "id": "stress",
+   "process": "stress",
+   "label": "Stress response",
+   "x": 760,
+   "y": 150
+  }
+ ],
+ "edges": [
+  [
+   "EGFR",
+   "GRB2",
+   "+"
+  ],
+  [
+   "GRB2",
+   "SOS1",
+   "+"
+  ],
+  [
+   "SOS1",
+   "KRAS",
+   "+"
+  ],
+  [
+   "KRAS",
+   "BRAF",
+   "+"
+  ],
+  [
+   "BRAF",
+   "MAP2K1",
+   "+"
+  ],
+  [
+   "MAP2K1",
+   "MAPK1",
+   "+"
+  ],
+  [
+   "MAPK1",
+   "MYC",
+   "+"
+  ],
+  [
+   "BCR",
+   "GRB2",
+   "+"
+  ],
+  [
+   "BCR",
+   "STAT5A",
+   "+"
+  ],
+  [
+   "STAT5A",
+   "BCL2L1",
+   "+"
+  ],
+  [
+   "KRAS",
+   "PIK3CA",
+   "+"
+  ],
+  [
+   "PIK3CA",
+   "AKT1",
+   "+"
+  ],
+  [
+   "AKT1",
+   "MTOR",
+   "+"
+  ],
+  [
+   "MTOR",
+   "RPS6",
+   "+"
+  ],
+  [
+   "RPS6",
+   "translation",
+   "+"
+  ],
+  [
+   "KRAS",
+   "growth",
+   "+"
+  ],
+  [
+   "MYC",
+   "CDK4",
+   "+"
+  ],
+  [
+   "CDK4",
+   "RB1",
+   "-"
+  ],
+  [
+   "RB1",
+   "E2F1",
+   "-"
+  ],
+  [
+   "E2F1",
+   "CDK1",
+   "+"
+  ],
+  [
+   "CDK1",
+   "division",
+   "+"
+  ],
+  [
+   "MDM2",
+   "TP53",
+   "-"
+  ],
+  [
+   "TP53",
+   "CDKN1A",
+   "+"
+  ],
+  [
+   "CDKN1A",
+   "CDK4",
+   "-"
+  ],
+  [
+   "TP53",
+   "BAX",
+   "+"
+  ],
+  [
+   "ATR",
+   "CHEK1",
+   "+"
+  ],
+  [
+   "CHEK1",
+   "CDK1",
+   "-"
+  ],
+  [
+   "ATR",
+   "dna_repair",
+   "+"
+  ],
+  [
+   "MCL1",
+   "BAX",
+   "-"
+  ],
+  [
+   "BCL2L1",
+   "BAX",
+   "-"
+  ],
+  [
+   "BAX",
+   "CYCS",
+   "+"
+  ],
+  [
+   "CYCS",
+   "CASP3",
+   "+"
+  ],
+  [
+   "CASP3",
+   "death",
+   "+"
+  ],
+  [
+   "CYCS",
+   "metabolism",
+   "+"
+  ]
+ ],
+ "sources": [
+  "hanahan2011",
+  "weinberg",
+  "alberts",
+  "reactome"
+ ]
+}

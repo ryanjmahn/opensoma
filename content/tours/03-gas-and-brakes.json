@@ -1,0 +1,72 @@
+{
+  "id": "gas-and-brakes",
+  "kind": "tour",
+  "order": 3,
+  "title": "Oncogenes vs. tumor suppressors",
+  "blurb": "A stuck gas pedal vs. broken brakes, shown on KRAS and p53.",
+  "minutes": 6,
+  "sources": ["weinberg", "vogelstein2013", "nci_genetics"],
+  "steps": [
+    {
+      "title": "Two kinds of cancer genes",
+      "view": "network", "highlight": ["KRAS", "TP53"],
+      "text": {
+        "simple": "Think of a cell like a car. **Oncogenes** are like a gas pedal stuck down. **Tumor suppressors** are like brakes. Cancer happens when the gas is stuck, the brakes are broken, or both.",
+        "student": "**Oncogenes** (e.g. KRAS, MYC) drive growth when mutated to be overactive; one bad copy is often enough. **Tumor suppressor genes** (e.g. TP53, RB1) normally restrain growth; usually both copies must be lost. [@nci_genetics] [@weinberg]",
+        "deep": "Oncogenes typically carry gain-of-function, often dominant, mutations at recurrent hotspots (e.g., KRAS G12). Tumor suppressors carry loss-of-function mutations distributed across the gene, often with loss of heterozygosity (Knudson's two-hit model). [@vogelstein2013]"
+      }
+    },
+    {
+      "title": "KRAS: the gas pedal",
+      "view": "molecule", "pdb": "4OBE",
+      "text": {
+        "simple": "KRAS is a tiny switch. It flips **on** when a growth signal arrives, then flips itself **off**. Cancer mutations break the 'off' part, so it stays on.",
+        "student": "KRAS is ON when holding GTP and OFF when holding GDP (shown here). Mutations like **G12** stop KRAS from switching itself off, so growth signals keep firing. [@waters2018]",
+        "deep": "Oncogenic G12/G13/Q61 substitutions impair intrinsic and GAP-stimulated GTP hydrolysis, locking KRAS in the GTP-bound state that engages RAF and PI3K effectors. [@waters2018]"
+      }
+    },
+    {
+      "title": "p53: the brake",
+      "view": "molecule", "pdb": "1TUP",
+      "text": {
+        "simple": "p53 is the cell's emergency brake. When DNA is damaged, p53 grabs onto DNA and switches on genes that stop the cell, or tell it to self-destruct.",
+        "student": "p53 is a **transcription factor**: it binds DNA (shown here) and turns on genes like **p21** that halt division. TP53 is the most commonly mutated gene in human cancer. [@vogelstein2013]",
+        "deep": "Most TP53 mutations are missense changes in the DNA-binding domain shown here, abolishing sequence-specific transactivation of targets such as CDKN1A, MDM2 and BAX. [@vogelstein2013]"
+      }
+    },
+    {
+      "title": "See the brake work, in real data",
+      "view": "network", "highlight": ["TP53", "MDM2", "ATR"],
+      "try": {
+        "actions": ["g:ATR"],
+        "note": {
+          "simple": "We turned off ATR, a DNA-damage alarm. In the healthy-like cell, look for **MDM2** and **FDXR** in the top genes. Those are genes p53 switches on. The cancer cell can't do this, because its p53 is broken.",
+          "student": "Both results are ● measured. In RPE1 (working p53), ATR knockdown raises p53 target genes like **MDM2, FDXR and TP53I3**. In K562 (broken p53), these don't appear. Instead, heat-shock genes rise.",
+          "deep": "RPE1 ATR knockdown induces a canonical p53 transcriptional program (MDM2, FDXR, TP53I3) and suppresses the mitotic program; K562 lacks this response, consistent with TP53 loss. Lineage differences may also contribute."
+        }
+      },
+      "text": {
+        "simple": "Here's real experimental data showing the brake in action, and what happens when it's missing.",
+        "student": "This is one of the clearest differences between our two cells in the data.",
+        "deep": "This contrast is visible across many DNA-replication and mitosis knockdowns (try PLK1 or CHEK1 too)."
+      }
+    },
+    {
+      "title": "Try it: lift the gas pedal",
+      "view": "network", "highlight": ["KRAS"],
+      "try": {
+        "actions": ["g:KRAS"],
+        "note": {
+          "simple": "Turning off KRAS barely changes K562! These leukemia cells don't run on KRAS. Their stuck pedal is BCR-ABL1 instead.",
+          "student": "KRAS knockdown in K562 is measured and weak (not statistically clear). K562's growth is driven by BCR-ABL1, not KRAS. A cancer is only 'addicted' to its own driver genes.",
+          "deep": "The weak KRAS phenotype in K562 illustrates oncogene addiction being driver-specific; KRAS-mutant pancreatic or lung lines would be expected to respond strongly. RPE1 is predicted (not in its screen)."
+        }
+      },
+      "text": {
+        "simple": "Now let's switch off the gas pedal KRAS. Watch what happens.",
+        "student": "Turn off KRAS and compare the two cells.",
+        "deep": "Compare KRAS knockdown phenotypes across lines."
+      }
+    }
+  ]
+}

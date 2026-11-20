@@ -1,0 +1,63 @@
+{
+  "id": "targeted-vs-chemo",
+  "kind": "lesson",
+  "order": 12,
+  "title": "Targeted therapy vs. chemotherapy",
+  "blurb": "Why some drugs hit every dividing cell, and others aim at one broken protein.",
+  "minutes": 7,
+  "sources": ["nci_chemo", "nci_targeted", "druker2001"],
+  "steps": [
+    {
+      "title": "Chemotherapy: hit everything that divides",
+      "view": "cell", "cell": "cancer", "focus": "nucleus",
+      "text": {
+        "simple": "Classic **chemotherapy** attacks cells that are dividing fast. Cancer cells divide a lot, so they get hit hard. But some healthy cells divide fast too, like hair and the gut lining, which causes side effects.",
+        "student": "Chemotherapy drugs kill fast-dividing cells, mostly by damaging DNA or blocking DNA building blocks. Healthy fast-dividing cells (hair follicles, mouth and gut lining, blood-forming cells) are also hit, causing side effects. [@nci_chemo]",
+        "deep": "Cytotoxic agents (antimetabolites, topoisomerase poisons, DNA crosslinkers, antimitotics) exploit proliferation rate and DNA-damage-response defects; therapeutic index is limited by proliferating normal tissues. [@nci_chemo]"
+      }
+    },
+    {
+      "title": "Try it: a classic chemo drug",
+      "view": "network", "highlight": ["division"],
+      "try": {"actions": ["d:methotrexate"], "note": "Methotrexate blocks DHFR, which cells need to make DNA building blocks. Compare the two cells."},
+      "text": {
+        "simple": "Methotrexate has been used since the 1950s. It blocks a protein every dividing cell needs.",
+        "student": "Methotrexate targets **DHFR**, an enzyme every dividing cell uses, cancer or not.",
+        "deep": "DHFR knockdown is a weak stand-in for methotrexate's acute nucleotide depletion; the measured knockdown effects are modest."
+      }
+    },
+    {
+      "title": "Targeted therapy: aim at the broken part",
+      "view": "molecule", "pdb": "1IEP",
+      "text": {
+        "simple": "**Targeted drugs** are designed to hit a protein that's broken in the cancer. Imatinib, for example, blocks BCR-ABL1, which only the leukemia cells have.",
+        "student": "Targeted therapies act on specific molecules that drive a cancer. [@nci_targeted] Imatinib transformed chronic myeloid leukemia treatment by blocking BCR-ABL1. [@druker2001]",
+        "deep": "Targeted agents exploit oncogene addiction. Imatinib's clinical success in CML established kinase inhibition as a paradigm, though most targeted drugs still have on- and off-target toxicities. [@druker2001]"
+      }
+    },
+    {
+      "title": "Try it: selective vs. broad",
+      "view": "network", "highlight": ["CDK4", "MTOR"],
+      "try": {"actions": ["g:CDK6"], "note": "CDK6 knockdown (palbociclib's target) changes the cancer cell's division program but leaves the healthy-like cell almost untouched. Now try MTOR in the playground: it hits both."},
+      "text": {
+        "simple": "A good target matters a lot to the cancer cell and very little to healthy cells.",
+        "student": "Compare how much each cell changes. This gap is what drug makers call a **therapeutic window**.",
+        "deep": "Differential dependency between tumor and normal cells defines the therapeutic window; genetic screens across many lines are used to find such selective dependencies."
+      }
+    },
+    {
+      "title": "Targeted doesn't mean no side effects",
+      "view": "none",
+      "text": {
+        "simple": "Even targeted drugs can cause side effects, because healthy cells often use the same protein a bit too.",
+        "student": "Targeted therapies can still cause side effects, such as skin, gut or liver problems, because normal cells may use the target too, or the drug may hit other proteins. [@nci_targeted]",
+        "deep": "On-target/off-tumor effects (e.g., EGFR inhibitor rash) and off-target kinase inhibition are common sources of toxicity. [@nci_targeted]"
+      }
+    }
+  ],
+  "quiz": [
+    {"q": "Why does chemotherapy often cause hair loss?", "options": ["It targets hair on purpose", "Hair-follicle cells divide fast, like cancer cells", "Hair is made of DNA", "It only affects old cells"], "answer": 1, "explain": "Chemo hits fast-dividing cells, including healthy ones in hair follicles. [@nci_chemo]"},
+    {"q": "What makes a drug 'targeted'?", "options": ["It is injected directly into the tumor", "It is designed to act on a specific molecule that drives the cancer", "It is very strong", "It has no side effects"], "answer": 1, "explain": "Targeted therapies act on specific molecules involved in cancer growth. [@nci_targeted]"},
+    {"q": {"simple": "In the app, which knockdown slowed the cancer cell's division but barely touched the healthy-like cell?", "student": "Which knockdown showed a selective effect on K562 vs. RPE1?"}, "options": ["MTOR", "CDK6", "Both equally", "Neither"], "answer": 1, "explain": "CDK6 knockdown changed K562's division program while RPE1 was almost unchanged (● measured)."}
+  ]
+}

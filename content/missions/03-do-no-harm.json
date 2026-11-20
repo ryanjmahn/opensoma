@@ -1,0 +1,21 @@
+{
+  "id": "do-no-harm",
+  "order": 3,
+  "title": "Do no harm",
+  "blurb": "Slow the cancer cell, but every change in the healthy cell costs you points.",
+  "brief": {
+    "simple": "Same idea, but now the **healthy-like cell** is watching. Slow the cancer cell's division to the goal, and every change you cause in the healthy cell **costs points**. This is how side effects work.",
+    "student": "Bring K562's division program to −0.5 while keeping RPE1 as unchanged as possible. Score = closeness − (average RPE1 change × 100).",
+    "deep": "Optimize the selectivity window: on-target efficacy in K562 minus mean absolute program perturbation in RPE1."
+  },
+  "goal": {"cell": "k562", "pathways": {"division": -0.5}, "harmWeight": 1.0},
+  "maxMoves": 3,
+  "passScore": 50,
+  "hints": ["MTOR works on the cancer cell, but look what it does to the healthy one!", "Blood cells rely on some division genes more than eye cells do.", "Try CDK6 and CCND3 together."],
+  "debrief": {
+    "simple": "You found a **selective** target: something the cancer cell needs more than the healthy cell. CDK6 and its partner cyclin D3 matter more in blood cells, and drugs like palbociclib block CDK6. In real patients, there are many more healthy cell types to protect.",
+    "student": "Selectivity, a large effect on the tumor with a small effect on normal cells, defines the **therapeutic window**. Here, CDK6/CCND3 knockdowns are measured to be selective for K562 over RPE1. Real patients have hundreds of normal cell types, so a second cell line is only a first check.",
+    "deep": "Lineage-specific CDK6/cyclin D3 dependence in hematopoietic cells versus CDK4/cyclin D1 in many epithelia is a known example of differential dependency. A two-line comparison confounds lineage with transformation, so broader normal-tissue panels are needed."
+  },
+  "sources": ["replogle2022", "nci_targeted"]
+}

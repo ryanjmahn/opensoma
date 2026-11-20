@@ -1,0 +1,15 @@
+[
+  {"pdb": "1IEP", "gene": "ABL1", "title": "ABL kinase + imatinib", "caption": "The ABL kinase domain (the business end of BCR-ABL1) with imatinib (sticks) wedged in its pocket. Imatinib holds the kinase in an 'off' shape.", "sources": ["pdb", "druker2001"]},
+  {"pdb": "6OIM", "gene": "KRAS", "title": "KRAS G12C + sotorasib", "caption": "Mutant KRAS G12C with sotorasib (AMG 510) bound in the 'switch-II' pocket next to the mutated cysteine, plus GDP. This pocket was the breakthrough that ended KRAS's 'undruggable' reputation.", "sources": ["pdb", "ostrem2013"]},
+  {"pdb": "4OBE", "gene": "KRAS", "title": "Normal KRAS + GDP", "caption": "Normal KRAS holding GDP, its 'off' signal molecule. The protein surface is smooth with no obvious deep pocket, which is why drug makers struggled for decades.", "sources": ["pdb"]},
+  {"pdb": "1TUP", "gene": "TP53", "title": "p53 gripping DNA", "caption": "The DNA-binding part of p53 clamped onto DNA. Most cancer mutations in TP53 hit this region and stop it from gripping DNA.", "sources": ["pdb", "vogelstein2013"]},
+  {"pdb": "5L2I", "gene": "CDK6", "title": "CDK6 + palbociclib", "caption": "CDK6 with palbociclib in the pocket where ATP (the cell's fuel molecule) would normally sit.", "sources": ["pdb"]},
+  {"pdb": "1U72", "gene": "DHFR", "title": "DHFR + methotrexate", "caption": "Human DHFR with methotrexate, an old chemotherapy that looks like the enzyme's natural partner, folate.", "sources": ["pdb"]},
+  {"pdb": "4HG7", "gene": "MDM2", "title": "MDM2 + nutlin-3a", "caption": "MDM2 with nutlin-3a sitting in the groove where p53 normally docks. Block the groove and p53 is set free.", "sources": ["pdb", "vassilev2004"]},
+  {"pdb": "7KK4", "gene": "PARP1", "title": "PARP1 + olaparib", "caption": "The catalytic part of PARP1 with olaparib bound.", "sources": ["pdb"]},
+  {"pdb": "4LVT", "gene": "BCL2", "title": "BCL-2 + navitoclax", "caption": "BCL-2 (a close cousin of BCL-XL) with navitoclax in the groove the protein uses to grab and silence 'death' proteins.", "sources": ["pdb"]},
+  {"pdb": "1HVY", "gene": "TYMS", "title": "Thymidylate synthase + raltitrexed", "caption": "Thymidylate synthase, the target of 5-fluorouracil, shown here with dUMP and raltitrexed (a different drug that blocks the same enzyme).", "sources": ["pdb"]},
+  {"pdb": "3QX3", "gene": "TOP2B", "title": "Topoisomerase II + etoposide + DNA", "caption": "Topoisomerase IIβ (a close cousin of TOP2A) trapped on cut DNA by etoposide.", "sources": ["pdb"]},
+  {"pdb": "1T8I", "gene": "TOP1", "title": "Topoisomerase I + camptothecin + DNA", "caption": "Topoisomerase I stuck on DNA by camptothecin, the natural compound topotecan was made from.", "sources": ["pdb"]},
+  {"pdb": "5LF3", "gene": "PSMB5", "title": "Proteasome + bortezomib", "caption": "The whole 20S proteasome, the cell's protein shredder, with bortezomib bound. It's big: give it a few seconds to load.", "sources": ["pdb"]}
+]
